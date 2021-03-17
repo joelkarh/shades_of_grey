@@ -1,0 +1,552 @@
+//font-family: 'IBM Plex Serif', serif;
+//font-family: 'Lora', serif;
+//Color
+$defaultColorr:#3baafe;
+$wit:#f5f5f5;
+$greyish:#5555;
+$red: #F37272;
+$brown: #584E4A;
+$whitey: #f0f0f0;
+$Yelly: #f3d076;
+$blueish:#709fb0;
+$browny:#C2B092;
+$defaultColor:grey;
+$duration: 2s;
+$greyo:#fafafa;
+
+$distance: 8px;
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+
+
+/******$Algemeen******/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+}
+
+.w-90 {
+    width: 90%;
+}
+
+/******Fonts***/
+@font-face {
+    font-family: notoBold;
+    src: url("/webfonts/NotoSans-Bold.ttf");
+}
+
+@font-face {
+    font-family: openSansReg;
+    src: url("/webfonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: openSansExtra;
+    src: url("/webfonts/OpenSans-ExtraBold.ttf");
+}
+
+@font-face {
+    font-family: openSansBold;
+    src: url("/webfonts/OpenSans-Bold.ttf");
+}
+@font-face{
+    font-family: extraBold;
+    src: url("/webfonts/OpenSans-SemiBold.ttf");
+}
+//Navbar
+a.nav-link {
+    font-family: OpenSansReg;
+
+}
+
+a.navbar-brand {
+    font-family: notoBold;
+    font-size: 1rem;
+}
+
+.gradient-text {
+    background-image: linear-gradient(45deg, #999999, #e6e6e6, #797979);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+#unList {
+    gap: 22px;
+    padding-right: 50px;
+}
+
+#navbarSupportedContent {
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        text-align: center;
+
+        li {
+            display: inline-block;
+            margin: 0;
+        }
+    }
+
+    a {
+        position: relative;
+        text-decoration: none;
+        padding-bottom: 8px;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: $defaultColorr;
+        }
+
+        &:before {
+            opacity: 0;
+            transform: translateY(- $distance);
+            transition: transform 0s $easeOutBack, opacity 0s;
+        }
+
+        &:after {
+            opacity: 0;
+            transform: translateY($distance/2);
+            transition: transform $duration $easeOutBack, opacity $duration;
+        }
+
+        &:hover,
+        &:focus {
+
+            &:before,
+            &:after {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            &:before {
+                transition: transform $duration $easeOutBack, opacity $duration;
+            }
+
+            &:after {
+                transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
+            }
+        }
+    }
+
+
+}
+
+/*** Header image **/
+
+.box1 {
+    //width:100% ;
+    // height:530px ;
+    background-image: url("/img /background-header.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+
+
+}
+
+
+/****header-text****/
+h1 {
+    font-size: 3rem;
+    font-family: openSansExtra;
+    margin-right: 10%;
+    padding-top: 15%;
+    bottom: 0;
+}
+
+#span1 {
+    color: #e6e6e6;
+}
+
+#span2 {
+    color: $defaultColorr;
+}
+
+.btnbox {
+    grid-gap: 10px;
+}
+
+#hover1,
+#hover2 {
+    font-family: openSansBold;
+    font-size: 1.125rem;
+}
+
+/**text color**/
+.bg-gray-1 {
+    background: $gray-700;
+
+    &:hover {
+        background: $gray-600;
+    }
+}
+
+.bg-gray-2 {
+    background: white;
+    color: $gray-600;
+
+    &:hover {
+        color: $gray-900;
+    }
+}
+
+/****Boxes****/
+#box1,
+#box2,
+#box3 {
+    background: #f5f5f5;
+
+    h2,
+    p {
+        color: #777777;
+    }
+
+    h2 {
+        font-family: notoBold;
+        font-size: 1.125rem;
+    }
+
+    p {
+        font-family: openSansReg;
+        font-size: 0.875rem;
+    }
+}
+
+.underliner1 {
+    border-bottom: 3px solid white;
+    border-width: thick;
+}
+
+.underliner2 {
+    border-bottom: 3px solid $defaultColorr;
+    border-width: thick;
+}
+
+.underliner3 {
+    border-bottom: 3px solid $gray-400;
+    border-width: thick;
+}
+
+.box-outline-shadow {
+    width: 60px;
+    height: 60px;
+    background: white;
+    top: -32px;
+    border-bottom-left-radius: 45%;
+    border-bottom-right-radius: 45%;
+}
+
+#box-icon-one {
+    position: absolute;
+    top: 10%;
+    background: $defaultColorr;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    left: 5px;
+}
+
+.box-icon-two {
+    position: absolute;
+    top: 10%;
+    background: #555555;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    left: 5px;
+}
+
+.grey {
+    background: #555555;
+    border-radius: 50%;
+}
+
+.bleu {
+    background: $defaultColorr;
+    border-radius: 50%;
+}
+
+.p-18 {
+    padding: 18%;
+}
+
+.p18-30 {
+    padding: 18% 30%;
+}
+
+
+
+
+
+/***Main why chose us**/
+#main_row_one {
+    background: url("/img /parallax.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+#main_One,
+h4.text-uppercase {
+    font-family: openSansBold;
+    font-size: 1.5rem;
+}
+
+.main_On {
+    color: white;
+    text-shadow: 1px 0px 1px rgb(151, 151, 151);
+}
+
+
+p.text-secondary {
+    font-family: openSansReg;
+    font-size: 0.875rem;
+}
+
+
+h3.text-secondary {
+    font-family: notoBold;
+    font-size: 1.125rem;
+}
+
+.wit {
+    background: $wit;
+}
+
+.imgbg {
+    background: white;
+    height: 50px;
+
+}
+
+.logo_text {
+    height: 20px;
+    width: 20px;
+}
+
+.color_text {
+    color: $defaultColorr;
+}
+.nametag3{
+    font-family: openSansBold;
+    font-size: 0.875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    ;
+}
+.nametag4{
+    font-family: extraBold;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #999999;
+
+}
+
+p.ml-lg{
+    padding-top: 29%;
+}
+div.ml-lg-26{
+    margin-left: 26%;
+}
+#member1 {
+    height: 147px;
+    width: 155px;
+}
+
+.nametag{
+    width: 156px;
+    height: 39px;
+    background: white;
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    transform: skew(-19deg);
+    position: absolute;
+    left: -15px;
+    z-index: -0.4;
+    text-align: center;
+    box-shadow: 0 1px 5px rgb(0 0 0 / 20%);
+}
+.nametag2{
+    width: 129px;
+    height: 30px;
+    background:#e6e6e6;
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    transform: skew(-19deg);
+    position: absolute;
+    left: -13px;
+    z-index: -0.4;
+    text-align: center;
+    box-shadow: 0 1px 5px rgb(0 0 0 / 20%);
+    top: 34px;
+}
+#member1{
+    margin-left:57px ;
+
+}
+.box-icon-three{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    background:white;
+    border-radius: 50%;
+}
+.box-icon-three-logo{
+    position: absolute;
+    left: 8px;
+    top: 3px;
+}
+.greyish{
+    color: $greyish;
+}
+
+#skewed-div{
+    transform: skew(-16deg, 0deg);
+    background: #eeeeee
+}
+article.greyo{
+    ;
+}
+.greyo{
+    background: $greyo;
+}
+clip-path: polygon(0 -3%, 100% 0, 86% 117%, 0 100%);
+
+
+
+
+
+
+
+
+
+/************************* 
+SCREENS LARGER THEN MOBILE
+ **************************/
+
+/*sm*/
+@media (min-width: 320px) {
+    .memberbox {
+        display: flex;
+        flex-direction: column;
+    }
+    .icons{
+        margin-left: -34%;
+        margin-top: -92%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+@media(min-width:425px){
+    #member1{
+        margin-left: 100px;
+    }
+
+}
+
+/*md*/
+@media (min-width: 768px) {
+    .col-md-6{
+        width: 47% !important;
+    }
+    .gap-md{
+        gap: 6%;
+    }
+}
+
+/*lg*/
+@media (min-width: 992px) {
+    a.navbar-brand {
+        font-size: 1.125rem;
+    }
+
+    .box1 {
+        transition: all 2.5s ease;
+
+        &:hover {
+            transform: scale(1.04);
+        }
+    }
+
+    #box-icon-one:hover {
+        background: #555555;
+    }
+
+    .box-icon-two:hover {
+        background: $defaultColorr;
+    }
+
+    .blue:hover {
+        background: $greyish;
+    }
+
+    .grey:hover {
+        background: $defaultColorr;
+    }
+
+    .box2 {
+        background-image: url("/img /parallax1.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    #member1 {
+        border: 9px solid #e6e6e6;
+        position: absolute;
+        top: -15px;
+        z-index: 1;
+        margin-left: 0px;
+
+        img {
+            padding-top: 2px;
+        }
+    }
+    #memberbox{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .position-relative-lg{
+        position: relative;
+    }
+    .ml-lg-26{
+        margin-left: 26%;
+    }
+    p.ml-lg{
+        margin-left: 30%;
+        padding-top: 14%;
+    }
+    .icons{
+        display: flex;
+        justify-content: space-evenly;
+        margin-left: 0;
+        margin-top: 0;
+        flex-direction: row;
+        
+    
+    }
+   
+   
+
+}

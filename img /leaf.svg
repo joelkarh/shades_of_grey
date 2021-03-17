@@ -1,0 +1,17 @@
+<svg id="top_features" data-name="top features" xmlns="http://www.w3.org/2000/svg" width="56" height="49" viewBox="0 0 56 49">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 30px;
+        fill: #fff;
+        text-anchor: middle;
+        font-family: FontAwesome;
+      }
+    </style>
+  </defs>
+  <g id="result">
+    <g id="icon">
+      <text id="rocket_icon" data-name="rocket icon" class="cls-1" x="28" y="38"><tspan x="28"></tspan></text>
+    </g>
+  </g>
+</svg>
